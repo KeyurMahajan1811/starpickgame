@@ -26,6 +26,22 @@
   border: thin solid #ddd;
 }
 
+.playbutton {
+  display: flex;
+    max-width: 100px;
+    
+    margin-left: 47%;
+    align-items: center;
+    word-wrap: break-word;
+    background-color: lawngreen;
+    border-radius: 100%;
+ }
+
+ .playbutton:hover{
+  background-color: darkgreen;
+  color: #eee;
+ }
+
 .star {
 	display: inline-block;
   margin: 0 15px;

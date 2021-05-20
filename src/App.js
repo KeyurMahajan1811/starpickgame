@@ -5,22 +5,33 @@ import { useState } from 'react';
 
 function App() {
   const [startGame, setStartGame] = useState(false)
+  let handleClick = (isButtonOn) => {
+    if (isButtonOn === true) {
+      setStartGame(false);
+      document.getElementById('playbutton').innerHTML = "Play Game";
+
+    }
+    else {
+      setStartGame(true);
+      document.getElementById('playbutton').innerHTML = "Exit Game";
+    }
+  }
   return (
-    <div className="App" style={{ backgroundColor: '#212121' }}>
-      <button onClick={() => setStartGame(true)}>Play Game</button>
+    <div className="App" style={{ backgroundColor: '#0c0b0b' }}>
+      <button id="playbutton" className='playbutton' onClick={() => handleClick(startGame)}>Play Game</button>
       {startGame === true ?
         <div>
           <StarPick />
         </div> : null
       }
-      <div style={{ backgroundColor: '#212121' }}>
+      <div style={{ backgroundColor: '#0c0b0b' }}>
         <Particles id="particles-js"
 
           height="95%"
           width="95%"
           style={{
             position: 'relatice',
-
+            backgroundColor: '0000FF'
           }}
           params={{
             particles: {
@@ -29,11 +40,11 @@ function App() {
                 value: 0.5
               },
               color: {
-                value: "#eceff1"
+                value: "0000FF"
               },
               line_linked: {
                 color: {
-                  value: "#eceff1"
+                  value: "0000FF"
                 }
               },
               number: {
@@ -50,13 +61,15 @@ function App() {
 
 
 
-      <div style={{ backgroundColor: '#212121' }} >
+      {/* <div style={{ backgroundColor: '#0c0b0b' }} >
         <Particles id="particles-js"
 
           height="95%"
           width="95%"
           style={{
             position: 'relative',
+            backgroundColor: '#FFFFFF'
+
           }}
           params={{
             particles: {
@@ -65,11 +78,11 @@ function App() {
                 value: 0.5
               },
               color: {
-                value: "#eceff1"
+                value: "#FFFFFF"
               },
               line_linked: {
                 color: {
-                  value: "#eceff1"
+                  value: "#FFFFFF"
                 }
               },
               number: {
@@ -81,7 +94,7 @@ function App() {
             }
           }}
         />
-      </div>
+      </div> */}
       {/* 
 
       <Particles id="particles-js"
